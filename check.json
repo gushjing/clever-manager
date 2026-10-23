@@ -1,0 +1,2589 @@
+{
+  "source_name": "智集优管-app.html",
+  "source_bytes": 367938,
+  "source_sha256": "4bce1f9f98a4fdb1fac77c8be5bd37739d4bcf37c9a307ea005f3cb9198132ad",
+  "encoding": "UTF-8",
+  "blocks": [
+    {
+      "file": "assets/css/style.css",
+      "original_start_byte": 226,
+      "original_end_byte": 38964,
+      "body_start_byte": 233,
+      "body_end_byte": 38956,
+      "body_sha256": "ff3bba5242a1900a1eed1d2dc6a1aa648a197d930c6d3d31ec75e658c0f00e8f",
+      "replacement": "<link rel=\"stylesheet\" href=\"assets/css/style.css\">",
+      "opening": "<style>",
+      "closing": "</style>"
+    },
+    {
+      "file": "assets/js/app.js",
+      "original_start_byte": 288539,
+      "original_end_byte": 367918,
+      "body_start_byte": 288547,
+      "body_end_byte": 367909,
+      "body_sha256": "0edb305322d3c75c98635603aee669c8ec9b50b35d909200350b98793aaac7f5",
+      "replacement": "<script src=\"assets/js/app.js\"></script>",
+      "opening": "<script>",
+      "closing": "</script>"
+    }
+  ],
+  "roundtrip_byte_identical": false,
+  "original_copy_byte_identical": true,
+  "post_extraction_changes": "index.html has separate notification center content, a usable admin compose/send form, personalized shopper lists/coupon views, working activity filters, consumer/vendor reviews and linked payment verification, vendor-specific search, an interactive business card editor with persisted product-image upload/preview and QR display, linked vendor incident-report/admin ticket screens, a vendor data dashboard with selectable activity ranges, selectable vendor booth intentions, vendor-only event listing/detail/application screens, and manager event/check-in views backed by shared activity, vendor attendance and consumer check-in records; assets/js/app.js adds live local time, role/payment/incident notifications, shopper ranking, locally persisted coupons/reviews/payments/vendor card/product images/incident data/vendor booth preferences/event application intentions, activity filters/sorting, review and rating synchronization, payment verification synchronization, vendor management search, image compression/validation and business-card gallery display, QR generation, incident ticket status progression, shop-specific sample metrics and recommendations with period-specific activity scores, booth choice independent of recommendations, vendor-only registration filtering, shared activity publishing/signup controls, persistent consumer check-in with duplicate prevention, cross-role vendor attendance, and actionable manager check-in reminders in the vendor notification center. The original snapshot remains unchanged.",
+  "javascript_syntax_check": "passed (node --check)",
+  "browser_validation": "Existing consumer, vendor, payment, incident and product-image checks remain recorded. This update was browser-tested across two same-origin tabs: publishing an activity in manager view exposed it to vendor registration; closing its signup removed it from the vendor list; consumer event check-in persisted and updated the manager attendance count; vendor location check-in updated both manager and consumer event status without overwriting consumer records; and manager check-in reminders appeared in the vendor notification center and navigated to vendor sign-in. Duplicate consumer check-in was blocked. JavaScript syntax, editor diagnostics and git diff whitespace checks passed. Cross-device live sync is not available; same-origin localStorage is used.",
+  "static_html_svg_count": 489,
+  "inline_style_attribute_count": 936,
+  "inline_event_attribute_count": 477,
+  "original_html_resource_references": [
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-layers"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-mega"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-layers"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-mega"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-mega"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-layers"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-history"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-trash"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-clock"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-clock"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-clock"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-layers"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-layers"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-mega"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-share"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-eye"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-plus"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-clock"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-trash"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-home"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-filter"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-sort"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-share"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-clock"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-mega"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-info"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-route"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-route"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-heart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-nav"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-star-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-heart-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-heart-f"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-trash"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-map"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-ticket"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-user"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-search"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-x"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-tent"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cloud"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bell"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-chart"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-users"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-spark"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-alert"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-trash"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-info"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-send"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-eye"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-crown"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-crown"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-flag"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-card"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-wallet"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-drop"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-invoice"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-invoice"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-doc"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-shield"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-store"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-pin"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-history"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-arrow"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-bolt"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-cam"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-edit"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-refresh"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-download"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-qr"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-scan"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-signal"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-back"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    },
+    {
+      "tag": "use",
+      "attribute": "href",
+      "value": "#i-check"
+    }
+  ],
+  "original_nonfragment_resource_references": [],
+  "files": {
+    "index.html": {
+      "bytes": 234545,
+      "sha256": "0da9ff5941ee3e1262f2a9e2f433905f4f35d5d6cb591c632cb20dc9dfa0797c"
+    },
+    "original/智集优管-app.html": {
+      "bytes": 367938,
+      "sha256": "4bce1f9f98a4fdb1fac77c8be5bd37739d4bcf37c9a307ea005f3cb9198132ad"
+    },
+    "assets/css/style.css": {
+      "bytes": 38723,
+      "sha256": "ff3bba5242a1900a1eed1d2dc6a1aa648a197d930c6d3d31ec75e658c0f00e8f"
+    },
+    "assets/js/app.js": {
+      "bytes": 211856,
+      "sha256": "d4f5f139dcdf1b03af279fed98a77a8e327e16b29f1d72c29e46f2a5bda58e5c"
+    }
+  }
+}
