@@ -392,6 +392,11 @@ textarea.input{resize:none; height:96px}
 .seg{display:flex; background:#EDF1F8; border-radius:14px; padding:4px; gap:4px}
 .seg button{flex:1; border:none; background:none; border-radius:11px; padding:8px 4px; font-size:12px; font-weight:700; color:var(--sub); cursor:pointer; font-family:inherit; transition:all .18s var(--ease)}
 .seg button.on{background:#fff; color:var(--sky2); box-shadow:0 2px 8px rgba(70,105,180,.12)}
+.route-targets{overflow-x:auto; scrollbar-width:none}
+.route-targets::-webkit-scrollbar{display:none}
+.route-targets button{flex:none; white-space:nowrap; padding:8px 10px}
+.route-option{transition:background .18s var(--ease)}
+.route-option.route-selected{background:var(--sky-soft)}
 /* 开关 */
 .tgl{position:relative; width:46px; height:28px; flex:none; border:none; border-radius:99px; background:#E1E7F2; cursor:pointer; transition:background .2s}
 .tgl::after{content:""; position:absolute; top:3px; left:3px; width:22px; height:22px; border-radius:99px; background:#fff; box-shadow:0 2px 6px rgba(0,0,0,.18); transition:left .2s var(--ease)}

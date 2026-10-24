@@ -925,7 +925,6 @@ function renderConsumerProfile(){
   const reviewCount=document.getElementById('consumerReviewCount');
   const summary=document.getElementById('consumerProfileSummary');
   const list=document.getElementById('consumerFavorites');
-  const reviewPreview=document.getElementById('consumerReviewPreview');
   if(count) count.textContent=consumerState.favorites.length;
   if(couponCount) couponCount.textContent=consumerState.coupons.filter(id=>!consumerState.usedCoupons.includes(id)).length;
   if(reviewCount) reviewCount.textContent=consumerState.reviews.length;
@@ -936,12 +935,6 @@ function renderConsumerProfile(){
       const shop=SHOP_CATALOG.find(item=>item.id===id);
       if(shop) list.appendChild(createShopRow(shop,'已收藏'));
     });
-  }
-  if(reviewPreview){
-    reviewPreview.replaceChildren();
-    const reviews=consumerState.reviews.slice().reverse().slice(0,2);
-    if(!reviews.length) reviewPreview.appendChild(createEmptyReviews('你提交的评价会显示在这里'));
-    reviews.forEach(review=>reviewPreview.appendChild(createReviewCard(review,true)));
   }
 }
 function createEmptyReviews(message){
@@ -1395,18 +1388,84 @@ renderMap('mapEvt', false);
 
 /* ================= 消费者路线地图（同一场地 · 规划视图） ================= */
 const ROUTES = {
-  'C-03':{name:'山野咖啡', y:34+2*26, main:'推荐 · 沿主通道直行', sub:'80 米 · 约 2 分钟 · 途经舞台区'},
-  'A-02':{name:'炭火研究所', y:34+1*26, main:'推荐 · 经餐饮区东入口', sub:'55 米 · 约 1 分钟 · 当前人流量中等', },
-  'B-04':{name:'拾光手作', y:34+3*26, main:'推荐 · 沿主通道至 B 列', sub:'70 米 · 约 2 分钟 · 途经文创区'},
+  'A-02':{
+    name:'炭火研究所',distance:55,minutes:1,approach:'沿主通道西侧前往',
+    landmark:'经过餐饮区导览牌',turn:'向西进入 A 区餐饮摊位',
+    sign:'沿橙色 A 区标识前行',altDistance:78,altMinutes:2,
+    alternative:'舒适路线 · 经餐饮区外侧',altLandmark:'从入口外侧通道绕行',
+    mainPath:'M118 253 L118 238 L80 238 L80 70 L40 70',
+    alternativePath:'M118 253 L118 238 L96 238 L96 86 L40 70',
+  },
+  'C-03':{
+    name:'山野咖啡',distance:80,minutes:2,approach:'经次通道前往饮品区',
+    landmark:'经过文创区与次通道交会处',turn:'右转进入饮品区 C 列',
+    sign:'沿蓝色 C 区标识前行',altDistance:108,altMinutes:3,
+    alternative:'舒适路线 · 经东侧通道',altLandmark:'沿场地东侧通道避开交会点',
+    mainPath:'M118 253 L118 238 L215 238 L215 96 L260 96',
+    alternativePath:'M118 253 L118 238 L230 238 L230 96 L260 96',
+  },
+  'A-11':{
+    name:'花屿甜品',distance:92,minutes:2,approach:'沿入口西侧通道前往甜品区',
+    landmark:'经过餐饮区南侧导览牌',turn:'向西进入 A 区甜品摊位',
+    sign:'沿橙色 A 区标识前行',altDistance:120,altMinutes:3,
+    alternative:'舒适路线 · 经南侧通道',altLandmark:'从场地南侧通道绕行',
+    target:{x:18,y:240,width:44,height:18},
+    mainPath:'M118 253 L118 238 L40 238 L40 249',
+    alternativePath:'M118 253 L118 238 L62 238 L62 249 L40 249',
+  },
+  'B-04':{
+    name:'拾光手作',distance:70,minutes:2,approach:'沿主通道前往文创区',
+    landmark:'经过主通道与文创区交会处',turn:'向西进入 B 区手作摊位',
+    sign:'沿紫色 B 区标识前行',altDistance:96,altMinutes:3,
+    alternative:'舒适路线 · 经文创区西侧',altLandmark:'沿文创区西侧步行通道前往',
+    mainPath:'M118 253 L118 238 L215 238 L215 122 L192 122 L170 122',
+    alternativePath:'M118 253 L118 238 L80 238 L80 122 L170 122',
+  },
+  'B-07':{
+    name:'墨白文创',distance:88,minutes:2,approach:'沿次通道前往文创区',
+    landmark:'经过文创区体验点',turn:'向西进入 B 区文创摊位',
+    sign:'沿紫色 B 区标识前行',altDistance:112,altMinutes:3,
+    alternative:'舒适路线 · 经文创区西侧',altLandmark:'沿文创区西侧步行通道前往',
+    mainPath:'M118 253 L118 238 L196 238 L196 200 L170 200',
+    alternativePath:'M118 253 L118 238 L80 238 L80 210 L170 200',
+  },
+  'C-01':{
+    name:'半颗柠檬',distance:66,minutes:2,approach:'沿场地东侧通道前往饮品区',
+    landmark:'经过舞台区东侧通道',turn:'向东进入 C 区饮品摊位',
+    sign:'沿蓝色 C 区标识前行',altDistance:94,altMinutes:3,
+    alternative:'舒适路线 · 经次通道',altLandmark:'从次通道东侧进入饮品区',
+    mainPath:'M118 253 L118 238 L215 238 L215 44 L260 44',
+    alternativePath:'M118 253 L118 238 L234 238 L234 44 L260 44',
+  },
+  'D-02':{
+    name:'陶然居',distance:120,minutes:3,approach:'沿次通道前往互动区',
+    landmark:'经过休息区外侧通道',turn:'向北进入 D 区互动摊位',
+    sign:'沿绿色 D 区标识前行',altDistance:145,altMinutes:4,
+    alternative:'舒适路线 · 经场地东侧',altLandmark:'沿东侧通道绕开休息区',
+    mainPath:'M118 253 L118 238 L204 238 L204 232 L260 232',
+    alternativePath:'M118 253 L118 238 L230 238 L230 232 L260 232',
+  },
 };
-function drawRouteMap(bid){
+let activeRouteId='C-03';
+let activeRouteVariant='main';
+function drawRouteMap(bid,variant=activeRouteVariant){
   const svg = document.getElementById('mapRoute');
   if(!svg) return;
   svg.innerHTML='';
   const NS='http://www.w3.org/2000/svg';
   const el=(t,a)=>{const n=document.createElementNS(NS,t);for(const k in a)n.setAttribute(k,a[k]);return n;};
   mapBase(svg);
-  const tgtY = ROUTES[bid].y + 10;
+  const route=ROUTES[bid];
+  const booth=BOOTHS.find(item=>item.id===bid);
+  const target=route.target||(booth?{
+    ...booth,
+    y:booth.zone==='play'?196+(parseInt(booth.id.slice(2))-1)*26:booth.y,
+  }:null);
+  if(!target) return;
+  const targetWidth=target.width||target.w;
+  const targetHeight=target.height||target.h;
+  const targetX=target.x+targetWidth/2;
+  const targetY=target.y+targetHeight/2;
   BOOTHS.forEach(b=>{
     const z=ZONES[b.zone];
     const y = b.zone==='play' ? 196 + (parseInt(b.id.slice(2))-1)*26 : b.y;
@@ -1418,32 +1477,80 @@ function drawRouteMap(bid){
     t.textContent=b.id; g.appendChild(t);
     svg.appendChild(g);
   });
-  // 备选路线（灰）：经次通道
-  svg.appendChild(el('path',{d:`M170 253 L215 253 L215 ${tgtY} L236 ${tgtY}`,
-    fill:'none',stroke:'#C9D2E8','stroke-width':3,'stroke-dasharray':'5 6','stroke-linecap':'round'}));
-  // 推荐路线（蓝）
-  svg.appendChild(el('path',{d:`M118 253 L118 ${tgtY} L236 ${tgtY}`,
-    fill:'none',stroke:'#4C7DF0','stroke-width':4,'stroke-linecap':'round','stroke-dasharray':'1 8'}));
+  if(route.target){
+    svg.appendChild(el('rect',{x:route.target.x,y:route.target.y,width:targetWidth,height:targetHeight,rx:6,fill:'#F25C7F',stroke:'#D6456C','stroke-width':2}));
+    const targetLabel=el('text',{x:targetX,y:targetY+3,'text-anchor':'middle','font-size':8.5,fill:'#fff','font-weight':700});
+    targetLabel.textContent=bid; svg.appendChild(targetLabel);
+  }
+  const routeColor=variant==='main'?'#4C7DF0':'#38B6D9';
+  svg.appendChild(el('path',{d:variant==='main'?route.mainPath:route.alternativePath,
+    fill:'none',stroke:routeColor,'stroke-width':4,'stroke-linecap':'round','stroke-linejoin':'round','stroke-dasharray':'1 8'}));
   // 起点终点标记
   svg.appendChild(el('circle',{cx:118,cy:253,r:7,fill:'#4C7DF0',stroke:'#fff','stroke-width':2.4}));
-  svg.appendChild(el('circle',{cx:236,cy:tgtY,r:7,fill:'#F25C7F',stroke:'#fff','stroke-width':2.4}));
-  const lb=el('text',{x:248,y:tgtY+3,'font-size':8.5,fill:'#D6456C','font-weight':800});
-  lb.textContent=ROUTES[bid].name; svg.appendChild(lb);
+  svg.appendChild(el('circle',{cx:targetX,cy:targetY,r:7,fill:'#F25C7F',stroke:'#fff','stroke-width':2.4}));
+  const labelX=targetX>280?targetX-10:targetX+10;
+  const lb=el('text',{x:labelX,y:targetY+3,'text-anchor':targetX>280?'end':'start','font-size':8.5,fill:'#D6456C','font-weight':800});
+  lb.textContent=route.name; svg.appendChild(lb);
 }
-drawRouteMap('C-03');
-function pickRoute(btn, bid, mname){
-  document.querySelectorAll('#routeSeg button').forEach(b=>b.classList.remove('on'));
-  btn.classList.add('on');
-  drawRouteMap(bid);
-  const r = ROUTES[bid];
-  document.getElementById('routeMain').textContent = r.main;
-  document.getElementById('routeSub').textContent = r.sub;
-  const steps = document.querySelectorAll('#routeSteps .tl-item .tl-t');
-  const subs = document.querySelectorAll('#routeSteps .tl-item .tl-s');
-  if(steps[2]) steps[2].textContent = bid[0]==='A' ? '左转进入餐饮区 · 橙色 A 区立牌' : bid[0]==='B' ? '左转进入文创区 · 紫色 B 区立牌' : '右转进入饮品区 · 蓝色 C 区立牌';
-  if(subs[3]) subs[3].textContent = bid + ' · ' + mname;
+function renderRouteTargets(){
+  const segment=document.getElementById('routeSeg');
+  if(!segment) return;
+  segment.replaceChildren();
+  SHOP_CATALOG.forEach(shop=>{
+    const button=document.createElement('button');
+    button.type='button';
+    button.textContent=shop.id+' '+shop.name;
+    button.classList.toggle('on',shop.id===activeRouteId);
+    button.addEventListener('click',()=>pickRoute(button,shop.id,shop.name));
+    segment.appendChild(button);
+  });
+}
+function renderRouteDetails(){
+  const route=ROUTES[activeRouteId];
+  const isMain=activeRouteVariant==='main';
+  document.getElementById('routeMain').textContent=isMain?'推荐 · '+route.approach:route.alternative;
+  document.getElementById('routeSub').textContent=(isMain?route.distance:route.altDistance)+' 米 · 约 '+(isMain?route.minutes:route.altMinutes)+' 分钟 · '+(isMain?route.landmark:route.altLandmark);
+  document.getElementById('alternativeRouteMain').textContent=route.alternative;
+  document.getElementById('alternativeRouteSub').textContent=route.altDistance+' 米 · 约 '+route.altMinutes+' 分钟 · '+route.altLandmark;
+  document.getElementById('recommendedRoute').classList.toggle('route-selected',isMain);
+  document.getElementById('alternativeRoute').classList.toggle('route-selected',!isMain);
+  document.getElementById('routeLegendLine').style.background=isMain?'var(--primary)':'var(--cyan)';
+  const titles=document.querySelectorAll('#routeSteps .tl-item .tl-t');
+  const subs=document.querySelectorAll('#routeSteps .tl-item .tl-s');
+  if(titles[1]) titles[1].textContent=isMain?route.approach:route.alternative;
+  if(subs[1]) subs[1].textContent=isMain?route.landmark:route.altLandmark;
+  if(titles[2]) titles[2].textContent=isMain?route.turn:'沿绕行通道继续前进';
+  if(subs[2]) subs[2].textContent=route.sign;
+  if(subs[3]) subs[3].textContent=activeRouteId+' · '+route.name;
+  drawRouteMap(activeRouteId);
+}
+function pickRoute(btn,bid,mname){
+  if(!ROUTES[bid]){toast('暂未收录该摊位的路线信息');return;}
+  activeRouteId=bid;
+  activeRouteVariant='main';
+  document.querySelectorAll('#routeSeg button').forEach(button=>button.classList.toggle('on',button===btn));
+  renderRouteDetails();
   toast('已切换目标摊位：'+bid+' · '+mname+'，路线已重新规划');
 }
+function selectRouteVariant(variant){
+  if(variant!=='main'&&variant!=='alternative') return;
+  activeRouteVariant=variant;
+  renderRouteDetails();
+  toast(variant==='main'?'已切换至推荐路线':'已切换至舒适路线');
+}
+function startConsumerNavigation(){
+  const route=ROUTES[activeRouteId];
+  const minutes=activeRouteVariant==='main'?route.minutes:route.altMinutes;
+  toast('导航已开始 · 步行约 '+minutes+' 分钟前往'+route.name+' · 到达后将提醒你打卡');
+}
+function openConsumerRoute(shopId=activeConsumerShopId){
+  if(!ROUTES[shopId]){toast('暂未收录该摊位的路线信息');return;}
+  show('con-route');
+  const button=document.querySelector('#routeSeg button:nth-child('+(SHOP_CATALOG.findIndex(shop=>shop.id===shopId)+1)+')');
+  pickRoute(button,shopId,ROUTES[shopId].name);
+}
+renderRouteTargets();
+renderRouteDetails();
 
 /* ================= 分配地图（待分配高亮） ================= */
 (function(){
@@ -1500,7 +1607,7 @@ function closeSheet(){
 const SCHEMES = {
   safe:  {name:'安全优先型方案', risk:'拥堵风险 · 低',  rc:'var(--green)',  rb:'var(--green-soft)',  desc:'主通道加宽至 4 米，高热餐饮摊位分散布局，消防通道全程留空，应急点覆盖全场。'},
   profit:{name:'收益优先型方案', risk:'收益预估 · 高',  rc:'var(--amber)',  rb:'var(--amber-soft)',  desc:'高热业态集中于主通道两侧黄金位，餐饮区靠近入口引流，坪效预估提升 22%。'},
-  exp:   {name:'体验优先型方案', risk:'体验评分 · 优',  rc:'var(--purple)', rb:'var(--purple-soft)', desc:'互动区与休息区穿插布局，设置 3 处打卡点与单向环游动线，减少折返与排队外溢。'},
+  exp:   {name:'体验优先型方案', risk:'体验评分 · 优',  rc:'var(--purple)', rb:'var(--purple-soft)', desc:'以舞台为场地核心，摊位沿环游动线加密布置，并设置多处打卡点，减少折返、延长逛集体验。'},
 };
 function pickScheme(btn){
   document.querySelectorAll('.fchip[data-scheme]').forEach(c=>c.classList.remove('on'));
@@ -1596,7 +1703,7 @@ function renderOrgMap(key){
       svg.appendChild(el('polygon',{points:'0,-5 9,0 0,5',fill:'#8FA3CF',transform:'translate('+a[0]+' '+a[1]+') rotate('+a[2]+')'}));
     });
     svg.appendChild(el('circle',{cx:180,cy:142,r:52,fill:'#E4EAF7'}));
-    txt(180,137,'中央广场',10.5,'#5B6B8C');
+    txt(180,137,'舞台',10.5,'#5B6B8C');
     txt(180,151,'休息 · 打卡 · 演出',8.5,'#8B91A7','middle',600);
     [[110,102],[250,102],[180,196]].forEach(s=>{
       const g = el('g',{});
@@ -1611,13 +1718,13 @@ function renderOrgMap(key){
     svg.appendChild(el('rect',{x:14,y:240,width:44,height:14,rx:6,fill:'#9AA3BC'})); txt(36,250,'出口',9,'#fff');
     txt(180,262,'单向环游动线 · 减少折返',8,'#9AA3BC','middle',600);
     txt(40,30,'文创区',8.5,'#8F77D8','start');
-    for(let i=0;i<5;i++) booth('B-'+String(i+1).padStart(2,'0'),'craft',40+i*58,36,50,18);
-    txt(308,68,'饮品区',8.5,'#5B84D6','start');
-    for(let i=0;i<4;i++) booth('C-'+String(i+1).padStart(2,'0'),'drink',308,76+i*36,40,24);
-    txt(226,230,'餐饮区',8.5,'#C78A4B','start');
-    for(let i=0;i<4;i++) booth('A-'+String(i+1).padStart(2,'0'),'food',66+i*56,236,48,16);
+    for(let i=0;i<7;i++) booth('B-'+String(i+1).padStart(2,'0'),'craft',40+i*40,36,34,15);
+    txt(308,62,'饮品区',8.5,'#5B84D6','start');
+    for(let i=0;i<6;i++) booth('C-'+String(i+1).padStart(2,'0'),'drink',312,70+i*26,36,20);
+    txt(180,230,'餐饮区',8.5,'#C78A4B');
+    for(let i=0;i<7;i++) booth('A-'+String(i+1).padStart(2,'0'),'food',60+i*32,234,29,16);
     txt(12,68,'互动区',8.5,'#4FA673','start');
-    for(let i=0;i<3;i++) booth('D-'+String(i+1).padStart(2,'0'),'play',12,76+i*40,40,26);
+    for(let i=0;i<4;i++) booth('D-'+String(i+1).padStart(2,'0'),'play',12,78+i*40,36,24);
     util(26,212,'drop','#38B6D9'); util(340,48,'bolt','#F2A93B'); util(340,212,'shield','#E85454');
   }
 }

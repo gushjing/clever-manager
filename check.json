@@ -2570,20 +2570,20 @@
   "original_nonfragment_resource_references": [],
   "files": {
     "index.html": {
-      "bytes": 234545,
-      "sha256": "0da9ff5941ee3e1262f2a9e2f433905f4f35d5d6cb591c632cb20dc9dfa0797c"
+      "bytes": 234255,
+      "sha256": "5bf7e45cfa817aac6ce3b7bb87a03c4897aaed0dabc0a5fc39a76cdd6e25dbc0"
     },
     "original/智集优管-app.html": {
       "bytes": 367938,
       "sha256": "4bce1f9f98a4fdb1fac77c8be5bd37739d4bcf37c9a307ea005f3cb9198132ad"
     },
     "assets/css/style.css": {
-      "bytes": 38723,
-      "sha256": "ff3bba5242a1900a1eed1d2dc6a1aa648a197d930c6d3d31ec75e658c0f00e8f"
+      "bytes": 39012,
+      "sha256": "4386b250b6894d36298f108cbd0173ca5364ad03b5cd46a10dbb4303cd82f213"
     },
     "assets/js/app.js": {
-      "bytes": 211856,
-      "sha256": "d4f5f139dcdf1b03af279fed98a77a8e327e16b29f1d72c29e46f2a5bda58e5c"
+      "bytes": 217673,
+      "sha256": "2f3b20477c914cfdc36958e3c873f74754d9efdd39822ccb9027c2c745ed457e"
     }
   }
 }

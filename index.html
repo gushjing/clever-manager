@@ -68,7 +68,7 @@
 
 <div id="phone">
 
-  <!-- ================= SPLASH（开场动画：原样保留，未作任何改动） ================= -->
+  <!-- ================= SPLASH（品牌开场） ================= -->
   <section id="splash" class="screen active pop">
     <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div><div class="blob b5"></div>
     <div class="splash-inner">
@@ -83,10 +83,8 @@
           <rect x="78" y="86" width="18" height="18" rx="5" fill="#F25C7F"/>
         </svg>
       </div>
-      <div class="sec-title">我的评价</div>
-      <div id="consumerReviewPreview" style="display:flex;flex-direction:column;gap:10px"></div>
       <div class="splash-title">智集<em>优管</em></div>
-      <div class="splash-sub">面向城市集市治理的数字化管理平台</div>
+      <div class="splash-sub">让每一场集市，都井然有序又充满活力</div>
       <div class="splash-dots"><i></i><i></i><i></i></div>
     </div>
     <div class="splash-tag">SMART MARKET GOVERNANCE</div>
@@ -895,9 +893,9 @@
           <div class="ck"><svg width="13" height="13" style="color:#fff"><use href="#i-check"/></svg></div>
           <div><div class="ck-t">收益优先型</div><div class="ck-s">入口引流位 · 主通道黄金摊位 · 窄通道高密度</div></div>
         </div>
-        <div class="chk" onclick="cmpPick(this,'体验优先型','单向环游动线 + 中央广场，传播与停留更优')">
+        <div class="chk" onclick="cmpPick(this,'体验优先型','以舞台为核心的单向环游动线，传播与停留更优')">
           <div class="ck"><svg width="13" height="13" style="color:#fff"><use href="#i-check"/></svg></div>
-          <div><div class="ck-t">体验优先型</div><div class="ck-s">中央广场 · 3 处打卡点 · 单向环游</div></div>
+          <div><div class="ck-t">体验优先型</div><div class="ck-s">舞台 · 环游动线 · 多处打卡点</div></div>
         </div>
       </div>
       <div style="height:16px"></div>
@@ -1555,7 +1553,7 @@
       <div style="height:16px"></div>
       <div class="row" style="gap:10px">
         <button class="btn ghost" onclick="toast('商户报名请使用摊主身份 · 正在切换…'); setTimeout(()=>enterPortal('ven'),600)"><svg width="16" height="16"><use href="#i-store"/></svg>商户报名</button>
-        <button class="btn" onclick="go('con-route')"><svg width="16" height="16"><use href="#i-nav"/></svg>导航前往</button>
+        <button class="btn" onclick="openConsumerRoute()"><svg width="16" height="16"><use href="#i-nav"/></svg>导航前往</button>
       </div>
       <div style="height:10px"></div>
       <div class="row" style="gap:10px">
@@ -1583,7 +1581,7 @@
     </div>
     <div class="scroll"><div class="stag">
       <div class="mapcard" style="margin:0">
-        <button class="mapmini" onclick="go('con-route')"><svg width="12" height="12"><use href="#i-route"/></svg>路线规划</button>
+        <button class="mapmini" onclick="openConsumerRoute()"><svg width="12" height="12"><use href="#i-route"/></svg>路线规划</button>
         <svg id="mapCon" viewBox="0 0 360 268"></svg>
         <div class="legend">
           <span class="lg"><i class="dot" style="background:#FFD9A8"></i>餐饮</span>
@@ -1625,26 +1623,22 @@
         <div class="legend">
           <span class="lg"><i class="dot" style="background:var(--primary);border-radius:99px"></i>起点</span>
           <span class="lg"><i class="dot" style="background:var(--pink);border-radius:99px"></i>目标摊位</span>
-          <span class="lg"><i class="dot" style="background:#C9D2E8;border-radius:2px"></i>备选路线</span>
+          <span class="lg"><i id="routeLegendLine" class="dot" style="background:var(--primary);border-radius:2px"></i>规划路线</span>
         </div>
       </div>
       <div class="sec-title">选择目标摊位</div>
-      <div class="seg" id="routeSeg">
-        <button class="on" onclick="pickRoute(this,'C-03','山野咖啡')">C-03 山野咖啡</button>
-        <button onclick="pickRoute(this,'A-02','炭火研究所')">A-02 炭火研究所</button>
-        <button onclick="pickRoute(this,'B-04','拾光手作')">B-04 拾光手作</button>
-      </div>
+      <div class="seg route-targets" id="routeSeg"></div>
       <div class="sec-title">推荐路线</div>
       <div class="card">
-        <div class="li" style="box-shadow:none;padding:10px 6px;border-radius:0" onclick="toast('已按推荐路线开始导航')">
+        <div class="li route-option route-selected" id="recommendedRoute" style="box-shadow:none;padding:10px 6px;border-radius:0;cursor:pointer" onclick="selectRouteVariant('main')">
           <div class="avatar" style="background:var(--primary-soft);color:var(--primary);border-radius:12px"><svg width="18" height="18"><use href="#i-route"/></svg></div>
           <div class="li-main"><div class="li-title" id="routeMain">推荐 · 沿主通道直行</div><div class="li-sub" id="routeSub">80 米 · 约 2 分钟 · 途经舞台区</div></div>
           <span class="chip" style="background:var(--green-soft);color:var(--green)">最短</span>
         </div>
         <div style="height:1px;background:var(--line)"></div>
-        <div class="li" style="box-shadow:none;padding:10px 6px;border-radius:0" onclick="toast('已切换至避开拥堵路线')">
+        <div class="li route-option" id="alternativeRoute" style="box-shadow:none;padding:10px 6px;border-radius:0;cursor:pointer" onclick="selectRouteVariant('alternative')">
           <div class="avatar" style="background:var(--cyan-soft);color:var(--cyan);border-radius:12px"><svg width="18" height="18"><use href="#i-users"/></svg></div>
-          <div class="li-main"><div class="li-title">避开拥堵 · 经次通道</div><div class="li-sub">110 米 · 约 3 分钟 · 当前主通道人流较高</div></div>
+          <div class="li-main"><div class="li-title" id="alternativeRouteMain">舒适路线 · 经次通道</div><div class="li-sub" id="alternativeRouteSub">110 米 · 约 3 分钟 · 避开人流较多区域</div></div>
           <span class="chip" style="background:var(--cyan-soft);color:var(--cyan)">舒适</span>
         </div>
       </div>
@@ -1658,7 +1652,7 @@
         </div>
       </div>
       <div style="height:16px"></div>
-      <button class="btn" onclick="toast('导航已开始 · 步行约 2 分钟 · 到达后将提醒你打卡')"><svg width="18" height="18"><use href="#i-nav"/></svg>开始导航</button>
+      <button class="btn" onclick="startConsumerNavigation()"><svg width="18" height="18"><use href="#i-nav"/></svg>开始导航</button>
     </div></div>
   </section>
 
@@ -1795,7 +1789,7 @@
         <div style="height:120px;background:linear-gradient(120deg,#F2814A,#F2A93B 60%,#FFD25E);position:relative">
           <div style="position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.18)"></div>
           <span class="chip" id="stallZone" style="position:absolute;left:14px;top:14px;background:rgba(255,255,255,.9);color:var(--orange)">饮品区 · C-03</span>
-          <span class="chip" style="position:absolute;right:14px;top:14px;background:rgba(255,255,255,.9);color:var(--sky2);cursor:pointer" onclick="go('con-route')">查看位置</span>
+          <span class="chip" style="position:absolute;right:14px;top:14px;background:rgba(255,255,255,.9);color:var(--sky2);cursor:pointer" onclick="openConsumerRoute(activeConsumerShopId)">查看位置</span>
         </div>
         <div style="padding:18px">
           <div class="row" style="justify-content:space-between">
@@ -1827,7 +1821,7 @@
       <div style="height:16px"></div>
       <div class="row" style="gap:10px">
         <button class="btn ghost" onclick="go('con-coupon')"><svg width="17" height="17"><use href="#i-ticket"/></svg>领券</button>
-        <button class="btn" onclick="go('con-route')"><svg width="17" height="17"><use href="#i-nav"/></svg>导航前往</button>
+        <button class="btn" onclick="openConsumerRoute(activeConsumerShopId)"><svg width="17" height="17"><use href="#i-nav"/></svg>导航前往</button>
       </div>
       <div style="height:10px"></div>
       <button class="btn soft-green" onclick="openReviewForm(activeConsumerShopId)"><svg width="17" height="17"><use href="#i-star"/></svg>评价这个摊位</button>
